@@ -9,8 +9,8 @@ const AddUser = (props) => {
 
   const addUserHandler = (e) => {
     e.preventDefault();
-    console.log(enteredUsername);
-    console.log(enteredAge);
+    setEnteredUsername("");
+    setEnteredAge("");
   };
 
   const usernameHandler = (event) => {
@@ -25,9 +25,19 @@ const AddUser = (props) => {
     <Card className={styles.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
-        <input id="username" type="text" onChange={usernameHandler} />
+        <input
+          value={enteredUsername}
+          id="username"
+          type="text"
+          onChange={usernameHandler}
+        />
         <label htmlFor="age">Age</label>
-        <input id="age" type="number" onChange={ageHandler} />
+        <input
+          value={enteredAge}
+          id="age"
+          type="number"
+          onChange={ageHandler}
+        />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
